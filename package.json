@@ -1,0 +1,20 @@
+{
+  "name": "learn-webpack",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "./src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack"
+  },
+  "devDependencies": {
+    "ts-loader": "^8.0.0",
+    "typescript": "^3.9.6",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.41",
+    "react": "^16.13.1"
+  }
+}
