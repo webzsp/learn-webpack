@@ -22,13 +22,13 @@ export default class Rect implements RectInterFace{
    * @param top 定位top属性
    * @param width 宽
    */
-  constructor({bottom, height, left, right, top, width}: { bottom?: number, height: number, left: number, right?: number, top: number, width: number }) {
+  constructor({bottom, height, left, right, top, width}: { bottom?: number, height?: number, left?: number, right?: number, top?: number, width?: number }={}) {
     this._bottom = bottom;
-    this._height = height;
-    this._left = left;
-    this._right = right;
-    this._top = top;
-    this._width = width;
+    this._height = height||0;
+    this._left = left||0;
+    this._right = right||0;
+    this._top = top||0;
+    this._width = width||0;
   }
 
   get bottom(): number |undefined{

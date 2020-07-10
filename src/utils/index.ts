@@ -34,4 +34,14 @@ function hasObject(array: Array<any> = [], obj: object, key: string) {
   return false;
 }
 
-export { uuid, getUnit, hasObject };
+class Log {
+  static error(msg:string){
+    console.error(msg)
+  }
+  static warning(msg:string){
+    console.warn(msg);
+  }
+}
+
+
+export { uuid, getUnit, hasObject,Log };

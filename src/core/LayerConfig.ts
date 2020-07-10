@@ -4,6 +4,9 @@
  * @description 图层配置类
  */
 import {AnimateInterFace, FontInterFace, LayerConfigInterFace, RectInterFace} from "./interface";
+import Animate from "@/core/Animate";
+import Font from "@/core/Font";
+import Rect from "@/core/Rect";
 
 class LayerConfig implements LayerConfigInterFace{
   private _animate: AnimateInterFace;
@@ -15,10 +18,10 @@ class LayerConfig implements LayerConfigInterFace{
    * @param font 图层的字体 ,子组件会自动取
    * @param rect 图层的矩阵信息,宽高等
    */
-  constructor(animate: AnimateInterFace, font: FontInterFace, rect: RectInterFace) {
-    this._animate = animate;
-    this._font = font;
-    this._rect = rect;
+  constructor({animate, font, rect}: { animate?: AnimateInterFace, font?: FontInterFace, rect?: RectInterFace }={}) {
+    this._animate = animate||new Animate();
+    this._font = font||new Font();
+    this._rect = rect||new Rect();
   }
 
   get animate(): AnimateInterFace {

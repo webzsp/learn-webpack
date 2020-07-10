@@ -10,13 +10,15 @@ import EventBus from "../../core/Event";
 import Layer from "../../core/Layer";
 import {CHANGE_RENDER_DATA_ITEM} from "../../constant/event";
 import View from "@/component/view/View";
+import TestComponent, {Config} from "@/test/test";
+import {ComponentUtils} from "@/core/ComponentUtils";
 
 interface IProps {
   renderData?: Array<Layer<any>>;
   change?: Function;
 }
 interface IState {
-  renderData: Array<any>;
+  renderData: Array<Layer<any>>;
 }
 
 class H5Editor extends React.Component<IProps, IState> {
@@ -35,6 +37,10 @@ class H5Editor extends React.Component<IProps, IState> {
     EventBus.addListener(CHANGE_RENDER_DATA_ITEM, (data: Layer<any>) =>
       this.changeRenderData(data),
     );
+    let layer=new Layer<any>({componentType:TestComponent.type, componentConfig:{}});
+    this.setState({
+      renderData:[layer]
+    })
   }
 
   getChangeRenderData(renderDataItem: Layer<any>): Array<Layer<any>> {

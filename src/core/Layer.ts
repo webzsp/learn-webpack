@@ -4,6 +4,8 @@
  * @description 渲染数据的子项数据结构
  */
 import {LayerConfigInterFace, LayerInterFace} from "./interface";
+import {uuid} from "@/utils";
+import LayerConfig from "@/core/LayerConfig";
 
 
 class Layer<T> implements LayerInterFace<T>{
@@ -25,13 +27,13 @@ class Layer<T> implements LayerInterFace<T>{
    * @param id 图层的id
    */
 
-  constructor(childrenLayer: Array<LayerInterFace<T>>, componentConfig: T, layerConfig: LayerConfigInterFace, page: string, componentType: string, id: string) {
-    this._childrenLayer = childrenLayer;
+  constructor({childrenLayer, componentConfig, layerConfig, page, componentType, id}: { childrenLayer?: Array<LayerInterFace<T>>, componentConfig: T, layerConfig?: LayerConfigInterFace, page?: string, componentType: string, id?: string }) {
+    this._childrenLayer = childrenLayer||[];
     this._componentConfig = componentConfig;
-    this._layerConfig = layerConfig;
-    this._page = page;
+    this._layerConfig = layerConfig||new LayerConfig();
+    this._page = page||'';
     this._componentType = componentType;
-    this._id = id;
+    this._id = id||uuid();
   }
 
 

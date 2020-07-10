@@ -19,7 +19,7 @@ export default class Font implements FontInterFace{
    * @param url 字体地址
    */
 
-  constructor({name,id,url}: { name?: string,id?:string,url?:string}) {
+  constructor({name,id,url}: { name?: string,id?:string,url?:string}={}) {
     this._name = name||Font.DEFAULT_FONT;
     this._id = id||uuid();
     this._url = url||'';
