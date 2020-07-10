@@ -1,16 +1,8 @@
 
-/**
- * @author zsp
- * @date 2020/7/9 20:23
- * @description
- */
-import Test from './test'
+import H5Editor from "./component/baseLayout/H5Editor";
 
-interface Index {
-    name:string,
+interface Interface {
+  name:string
 }
-const z='d2';
-function zsp (name:string):string{
-    return  name+'w286';
-}
-export {zsp,Test}
+
+export default H5Editor;

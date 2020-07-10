@@ -1,0 +1,49 @@
+:global {
+}
+.H5editor {
+  background-color: rgb(236, 236, 236);
+  padding: 10px;
+  * {
+    box-sizing: border-box;
+  }
+  :global {
+    .header {
+      height: 60px;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+    .content {
+      margin-top: 10px;
+      border-radius: 10px;
+      padding-bottom: 10px;
+      display: flex;
+      > div {
+        background-color: #ffffff;
+      }
+      .phone {
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 15px 20px;
+        flex-grow: 1;
+        .phone-content {
+          overflow: hidden;
+          background-color: rgb(236, 236, 236);
+          .phone-image {
+            width: 277px;
+            height: 532.8px;
+            padding: 33px 10px;
+            border-radius: 40px;
+            margin: 30px auto;
+            background-color: rgba(215, 215, 215, 1);
+          }
+        }
+      }
+      .right {
+        margin-left: 10px;
+        border-radius: 10px;
+        width: 250px;
+        padding-left: 10px;
+      }
+    }
+  }
+}

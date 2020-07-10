@@ -2,6 +2,25 @@
 # yarn lockfile v1
 
 
+"@types/events@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/@types/events/download/@types/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
+  integrity sha1-KGLz9Yqaf3w+eNefEw3U1xwlwqc=
+
+"@types/html2canvas@^0.0.35":
+  version "0.0.35"
+  resolved "https://registry.npm.taobao.org/@types/html2canvas/download/@types/html2canvas-0.0.35.tgz#a009681a3207a7a8302e65de034ff8d42c949cf7"
+  integrity sha1-oAloGjIHp6gwLmXeA0/41CyUnPc=
+  dependencies:
+    "@types/jquery" "*"
+
+"@types/jquery@*":
+  version "3.5.0"
+  resolved "https://registry.npm.taobao.org/@types/jquery/download/@types/jquery-3.5.0.tgz#ccb7dfd317d02d4227dd3803c75297d0c10dad68"
+  integrity sha1-zLff0xfQLUIn3TgDx1KX0MENrWg=
+  dependencies:
+    "@types/sizzle" "*"
+
 "@types/json-schema@^7.0.4":
   version "7.0.5"
   resolved "https://registry.npm.taobao.org/@types/json-schema/download/@types/json-schema-7.0.5.tgz?cache=0&sync_timestamp=1591720875502&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fjson-schema%2Fdownload%2F%40types%2Fjson-schema-7.0.5.tgz#dcce4430e64b443ba8945f0290fb564ad5bac6dd"
@@ -19,6 +38,11 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
+
+"@types/sizzle@*":
+  version "2.3.2"
+  resolved "https://registry.npm.taobao.org/@types/sizzle/download/@types/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
+  integrity sha1-qBG4wY4rq6t9VCszZYh64uTZ3kc=
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -321,6 +345,11 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/balanced-match/download/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
+
+base64-arraybuffer@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npm.taobao.org/base64-arraybuffer/download/base64-arraybuffer-0.2.0.tgz#4b944fac0191aa5907afe2d8c999ccc57ce80f45"
+  integrity sha1-S5RPrAGRqlkHr+LYyZnMxXzoD0U=
 
 base64-js@^1.0.2:
   version "1.3.1"
@@ -786,6 +815,13 @@ crypto-browserify@^3.11.0:
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
+css-line-break@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npm.taobao.org/css-line-break/download/css-line-break-1.1.1.tgz#d5e9bdd297840099eb0503c7310fd34927a026ef"
+  integrity sha1-1em90peEAJnrBQPHMQ/TSSegJu8=
+  dependencies:
+    base64-arraybuffer "^0.2.0"
+
 css-loader@^3.6.0:
   version "3.6.0"
   resolved "https://registry.npm.taobao.org/css-loader/download/css-loader-3.6.0.tgz?cache=0&sync_timestamp=1592056888388&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcss-loader%2Fdownload%2Fcss-loader-3.6.0.tgz#2e4b2c7e6e2d27f8c8f28f61bffcd2e6c91ef645"
@@ -990,6 +1026,11 @@ estraverse@^4.1.0, estraverse@^4.1.1:
 events@^3.0.0:
   version "3.1.0"
   resolved "https://registry.npm.taobao.org/events/download/events-3.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fevents%2Fdownload%2Fevents-3.1.0.tgz#84279af1b34cb75aa88bf5ff291f6d0bd9b31a59"
+  integrity sha1-hCea8bNMt1qoi/X/KR9tC9mzGlk=
+
+events@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npm.taobao.org/events/download/events-3.1.0.tgz#84279af1b34cb75aa88bf5ff291f6d0bd9b31a59"
   integrity sha1-hCea8bNMt1qoi/X/KR9tC9mzGlk=
 
 evp_bytestokey@^1.0.0, evp_bytestokey@^1.0.3:
@@ -1363,6 +1404,13 @@ homedir-polyfill@^1.0.1:
   integrity sha1-dDKYzvTlrz4ZQWH7rcwhUdOgWOg=
   dependencies:
     parse-passwd "^1.0.0"
+
+html2canvas@^1.0.0-rc.5:
+  version "1.0.0-rc.5"
+  resolved "https://registry.npm.taobao.org/html2canvas/download/html2canvas-1.0.0-rc.5.tgz#4ee3cac9f6e20a0fa0c2f35a6f99c960ae7ec4c1"
+  integrity sha1-TuPKyfbiCg+gwvNab5nJYK5+xME=
+  dependencies:
+    css-line-break "1.1.1"
 
 http-signature@~1.2.0:
   version "1.2.0"
