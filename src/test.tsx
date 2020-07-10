@@ -4,10 +4,12 @@
  * @description
  */
 import React from 'react'
+import style from './test.less'
 
 export default class Test123 extends React.Component{
 
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
-        return <div>o677o2</div>;
+        console.log(style);
+        return <div className={style.color}>o6772o22222</div>;
     }
 }

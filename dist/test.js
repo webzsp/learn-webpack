@@ -4,8 +4,9 @@
  * @description
  */
 import React from 'react';
+import style from './test.less';
 export default class Test123 extends React.Component {
     render() {
-        return React.createElement("div", null, "o677o2");
+        return React.createElement("div", { className: style.color }, "o6772o22222");
     }
 }

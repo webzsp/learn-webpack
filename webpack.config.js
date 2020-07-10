@@ -23,7 +23,7 @@ module.exports = {
     entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'webpack-numbers.js',
+        filename: 'a-editor.js',
         library: 'zsp',
         libraryTarget: "umd"
     },
@@ -32,6 +32,20 @@ module.exports = {
             {
                 test: /\.(jsx|ts|tsx)$/,
                 use:'ts-loader'
+            },
+            {
+                test: /\.less$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader", // translates CSS into CommonJS
+                    options: {
+                        modules: true,
+                    }
+                }, {
+                    loader: "less-loader", // compiles Less to CSS
+
+                }]
             }
         ]
     },

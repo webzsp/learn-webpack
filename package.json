@@ -1,13 +1,16 @@
 {
-  "name": "learn-webpack",
+  "name": "a-editor",
   "version": "1.0.0",
-  "main": "./dist/index.js",
+  "main": "./dist/a-editor.js",
   "types": "./src/index.ts",
   "license": "MIT",
   "scripts": {
     "start": "webpack"
   },
   "devDependencies": {
+    "css-loader": "^3.6.0",
+    "less-loader": "^6.2.0",
+    "style-loader": "^1.2.1",
     "ts-loader": "^8.0.0",
     "typescript": "^3.9.6",
     "webpack": "^4.43.0",
