@@ -4,14 +4,25 @@
  * @description
  */
 import React from "react";
+import LayerConfig from "@/core/LayerConfig";
 
-export default class TestComponent extends React.Component{
+
+interface ConfigProps {
+    componentConfig:{
+        src:string
+    }
+    layerConfig:LayerConfig
+}
+
+export default class TestComponent extends React.Component<ConfigProps>{
     static type: any;
 
     render(){
+        const {componentConfig,layerConfig}=this.props;
+        console.log(layerConfig.rect.width,layerConfig.rect.height);
         return (
             <div>
-                我是组件
+                <img draggable={"false"} style={{width:'100%',height:'100%'}} src={componentConfig.src} alt=""/>
             </div>
         )
     }

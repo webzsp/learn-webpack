@@ -5,7 +5,8 @@
  */
 import * as React from "react";
 import {Log} from "@/utils";
-import {layerWrapComponent} from "@/component/layer/LayerComponent";
+import {LayerComponent} from "@/component/layer/LayerComponent";
+import Layer from "@/core/Layer";
 
 type Component={
   component:any,
@@ -40,20 +41,24 @@ class ComponentUtils {
    */
   registerComponent(component:Component){
     try {
-      this.componentMap[component.type]=this.wrapComponentByLayer(component.component);
+      this.componentMap[component.type]=component.component;
       this.componentStyleMap[component.type]=component.configComponent;
     }catch (e) {
       Log.error('组件不符合规范');
     }
   }
 
-  getComponent(type:string){
-    return this.componentMap[type];
+  getComponent(type:string,options:Layer<any>){
+      let Dom=this.componentMap[type];
+      return  <LayerComponent key={options.id} layer={options} renderProps={(props=>{
+        // return  React.cloneElement(this.componentMap[type], {...props});
+          return <Dom {...props}/>
+     })}/>
   }
 
-  wrapComponentByLayer(Component: any){
-    return layerWrapComponent(Component)
-  }
+  // wrapComponentByLayer(Component: any){
+  //   return layerWrapComponent(Component)
+  // }
 
 
 

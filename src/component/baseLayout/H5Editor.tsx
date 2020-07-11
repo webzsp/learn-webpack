@@ -33,11 +33,23 @@ class H5Editor extends React.Component<IProps, IState> {
     return prevState;
   }
 
+  registerEvent(){
+     let h5Editor=document.getElementById('h5Editor');
+     if(h5Editor){
+       h5Editor.addEventListener('click',this.handlerClick.bind(this),true)
+     }
+  }
+  handlerClick(e:Event){
+    console.log(e);
+  }
   componentDidMount(): void {
+    this.registerEvent();
     EventBus.addListener(CHANGE_RENDER_DATA_ITEM, (data: Layer<any>) =>
       this.changeRenderData(data),
     );
-    let layer=new Layer<any>({componentType:TestComponent.type, componentConfig:{}});
+    let layer=new Layer<any>({componentType:TestComponent.type, componentConfig:{src:'http://img0.imgtn.bdimg.com/it/u=3256100974,305075936&fm=26&gp=0.jpg'}});
+    layer.layerConfig.rect.width=120;
+    layer.layerConfig.rect.height=120;
     this.setState({
       renderData:[layer]
     })
@@ -69,7 +81,7 @@ class H5Editor extends React.Component<IProps, IState> {
   render() {
     const { renderData = [] } = this.state;
     return (
-      <div className={style.H5editor}>
+      <div id='h5Editor' className={style.H5editor}>
         <div className="header">
           <button >导出图片</button>
         </div>

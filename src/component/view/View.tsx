@@ -17,14 +17,11 @@ interface IState {
 export default class View extends React.Component<IProps,IState>{
     render(){
         const {renderData}=this.props;
-        console.log(renderData.map(item=>{
-            return ComponentUtils.getInstance().getComponent(item.componentType)
-        }));
         return (
             <div className={style.phone}>
                 {
                     renderData.map(item=>{
-                        return ComponentUtils.getInstance().getComponent(item.componentType)
+                        return ComponentUtils.getInstance().getComponent(item.componentType,item)
                     })
                 }
             </div>

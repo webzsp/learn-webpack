@@ -43,13 +43,29 @@ module.exports = {
                 }, {
                     loader: "css-loader", // translates CSS into CommonJS
                     options: {
-                        modules: true,
+                        modules: {
+                            localIdentName:'[name]__[local]___[hash:base64:5]'
+                        },
+
                     }
                 }, {
                     loader: "less-loader", // compiles Less to CSS
 
                 }]
-            }
+            },
+            {
+                // 图片解析
+                test: /\.(png|jpg|jpeg|gif)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                            name: '[path][name].[hash:4].[ext]',
+                        },
+                    },
+                ],
+            },
         ]
     },
     optimization: {

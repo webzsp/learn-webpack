@@ -1,0 +1,91 @@
+@blockWidth:4px;
+.layer{
+  position: relative;
+  .operate_par{
+    border: 1px solid #1baee1;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+  }
+  :global{
+
+    .operate-line{
+      width: 0px;
+      height: 17px;
+      position: absolute;
+      border-left: 1px solid #1baee1;
+      top: -20px;
+      background-color: #1baee1;
+      left: 50%;
+      transform: translateX(-50%);
+      .operate-rotate{
+        position: absolute;
+        top: -10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        left: -6px;
+        background-color: #4cae4c;
+        //cursor: url("../../assets/image/circle.png"),pointer;
+        cursor: url("http://localhost:3000/circle.png") 16 16,pointer;
+      }
+    }
+
+
+    .operate-point {
+      position: absolute;
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 4px;
+      border: 1px solid #1baee1;
+      background-color: #ffffff;
+    }
+    .top-left {
+      top: -(@blockWidth);
+      left: -@blockWidth;
+      cursor: nw-resize;
+    }
+    .top-center {
+      top: -@blockWidth;
+      left: 50%;
+      cursor: n-resize;
+      transform: translateX(-50%);
+    }
+    .top-right {
+      top: -@blockWidth;
+      cursor: ne-resize;
+      right: -@blockWidth;
+    }
+    .center-left {
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: w-resize;
+      left: -@blockWidth;
+    }
+    .center-right {
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: e-resize;
+      right: -@blockWidth;
+    }
+    .bottom-left {
+      bottom: -@blockWidth;
+      cursor: sw-resize;
+      left: -@blockWidth;
+    }
+    .bottom-center {
+      bottom: -@blockWidth;
+      cursor: s-resize;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .bottom-right {
+      cursor: se-resize;
+      right: -@blockWidth;
+      bottom: -@blockWidth;
+    }
+  }
+}
