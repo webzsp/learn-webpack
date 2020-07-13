@@ -18,7 +18,7 @@ export default class View extends React.Component<IProps,IState>{
     render(){
         const {renderData}=this.props;
         return (
-            <div className={style.phone}>
+            <div id="h5Editor" className={style.phone}>
                 {
                     renderData.map(item=>{
                         return ComponentUtils.getInstance().getComponent(item.componentType,item)

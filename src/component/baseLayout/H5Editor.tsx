@@ -12,6 +12,7 @@ import {CHANGE_RENDER_DATA_ITEM} from "../../constant/event";
 import View from "@/component/view/View";
 import TestComponent, {Config} from "@/test/test";
 import {ComponentUtils} from "@/core/ComponentUtils";
+import {DOM_LAYER, getParentByType} from "@/utils/DomUtils";
 
 interface IProps {
   renderData?: Array<Layer<any>>;
@@ -40,14 +41,25 @@ class H5Editor extends React.Component<IProps, IState> {
      }
   }
   handlerClick(e:Event){
-    console.log(e);
+    console.log(e.target);
+    // @ts-ignore
+    let layer=getParentByType(e.target || document.body, DOM_LAYER);
+    if(!layer){
+      const {renderData=[]} = this.state;
+      this.setState({
+        renderData:renderData.map(item=>{
+          item.isActive=false;
+          return item
+        })
+      })
+    }
   }
   componentDidMount(): void {
     this.registerEvent();
     EventBus.addListener(CHANGE_RENDER_DATA_ITEM, (data: Layer<any>) =>
       this.changeRenderData(data),
     );
-    let layer=new Layer<any>({componentType:TestComponent.type, componentConfig:{src:'http://img0.imgtn.bdimg.com/it/u=3256100974,305075936&fm=26&gp=0.jpg'}});
+    let layer=new Layer<any>({componentType:TestComponent.type, componentConfig:{src:'http://img3.imgtn.bdimg.com/it/u=2534506313,1688529724&fm=26&gp=0.jpg'}});
     layer.layerConfig.rect.width=120;
     layer.layerConfig.rect.height=120;
     this.setState({
@@ -81,7 +93,7 @@ class H5Editor extends React.Component<IProps, IState> {
   render() {
     const { renderData = [] } = this.state;
     return (
-      <div id='h5Editor' className={style.H5editor}>
+      <div className={style.H5editor}>
         <div className="header">
           <button >导出图片</button>
         </div>

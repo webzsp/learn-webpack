@@ -16,7 +16,7 @@ class Layer<T> implements LayerInterFace<T>{
   private _page: string;
   private _componentType: string;
   private _id: string;
-
+  private _isActive:boolean;
   /**
    *
    * @param childrenLayer  组合的子图层
@@ -25,15 +25,17 @@ class Layer<T> implements LayerInterFace<T>{
    * @param page 属于的页码
    * @param componentType 组建的类型
    * @param id 图层的id
+   * @param isActive 图层是否激活
    */
 
-  constructor({childrenLayer, componentConfig, layerConfig, page, componentType, id}: { childrenLayer?: Array<LayerInterFace<T>>, componentConfig: T, layerConfig?: LayerConfigInterFace, page?: string, componentType: string, id?: string }) {
+  constructor({childrenLayer, componentConfig, layerConfig, page, componentType, id,isActive}: { childrenLayer?: Array<LayerInterFace<T>>, componentConfig: T, layerConfig?: LayerConfigInterFace, page?: string, componentType: string, id?: string,isActive?:boolean}) {
     this._childrenLayer = childrenLayer||[];
     this._componentConfig = componentConfig;
     this._layerConfig = layerConfig||new LayerConfig();
     this._page = page||'';
     this._componentType = componentType;
     this._id = id||uuid();
+    this._isActive=isActive||false;
   }
 
 
@@ -84,6 +86,14 @@ class Layer<T> implements LayerInterFace<T>{
 
   set id(value: string) {
     this._id = value;
+  }
+
+  get isActive(): boolean {
+    return this._isActive;
+  }
+
+  set isActive(value: boolean) {
+    this._isActive = value;
   }
 }
 export default Layer;
